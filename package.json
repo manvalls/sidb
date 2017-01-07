@@ -1,0 +1,25 @@
+{
+  "name": "sidb",
+  "version": "1.0.0",
+  "description": "Yet another IndexedDB facade",
+  "main": "main.js",
+  "dependencies": {
+    "y-callback": "^1.2.4",
+    "y-walk": "^10.0.7"
+  },
+  "devDependencies": {
+    "u-test": "^3.8.10"
+  },
+  "scripts": {
+    "test": "u-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/manvalls/sidb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manvalls/sidb/issues"
+  },
+  "author": "Manuel Valls Fernández <manolo@vlrz.es>",
+  "license": "Apache-2.0"
+}
