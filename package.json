@@ -1,6 +1,6 @@
 {
   "name": "sidb",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Yet another IndexedDB facade",
   "main": "main.js",
   "dependencies": {
