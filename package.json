@@ -5,6 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "y-callback": "^1.2.4",
+    "y-setter": "^6.15.0",
     "y-walk": "^10.0.7"
   },
   "devDependencies": {

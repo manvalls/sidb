@@ -1,6 +1,7 @@
 var Resolver = require('y-resolver'),
     Transaction = require('./Transaction'),
     Store = require('./Store'),
+    LiveStore = require('./LiveStore'),
     promise = require('./requestToPromise'),
     database = Symbol(),
     done = Symbol(),
@@ -38,6 +39,10 @@ class DataBase{
 
     for(store of stores) transaction[store] = new Store(trx.objectStore(store), transaction);
     return transaction;
+  }
+
+  live(store){
+    return new LiveStore(this, this[database].name, store);
   }
 
   get storeNames(){

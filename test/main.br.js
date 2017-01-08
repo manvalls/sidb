@@ -354,3 +354,34 @@ t('Version change', function*(){
   })).close();
 
 });
+
+t('LiveStore', function*(){
+  var db = yield sidb.open('live', {
+    stores: {liveStore: {}}
+  });
+
+  var h1 = yield db.live('liveStore').get('sample');
+  var h2 = yield db.live('liveStore').get('sample');
+
+  assert.strictEqual(h1.value, undefined);
+  yield h1.is(h2);
+
+  h1.value = 'foo';
+  yield h1.is(h2);
+
+  h2.value = 'bar';
+  yield h1.is(h2);
+
+  db.close();
+
+  db = yield sidb.open('live', {
+    stores: {liveStore: {}}
+  });
+
+  h1 = yield db.live('liveStore').get('sample');
+  h2 = yield db.live('liveStore').get('sample');
+
+  assert.strictEqual(h1.value, 'bar');
+  yield h1.is(h2);
+
+});
